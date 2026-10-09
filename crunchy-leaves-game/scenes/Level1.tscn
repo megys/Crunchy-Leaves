@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwp3le02rkf1e"]
+
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_6nghc"]
+[ext_resource type="Texture2D" uid="uid://c66f0yl7jrxub" path="res://icon.svg" id="1_j2mql"]
+[ext_resource type="PackedScene" uid="uid://c1gxlr0jxqecf" path="res://scenes/apple.tscn" id="2_q0a5g"]
+[ext_resource type="PackedScene" uid="uid://dsswokgkfwbc2" path="res://scenes/Player.tscn" id="3_y1emk"]
+[ext_resource type="PackedScene" uid="uid://uf2brv8fm2ym" path="res://scenes/PauseMenu.tscn" id="5_46j3l"]
+[ext_resource type="Texture2D" uid="uid://8pseep7mx361" path="res://art assets/background/sad bg.png" id="6_khup8"]
+[ext_resource type="Texture2D" uid="uid://ho3653jtds2e" path="res://art assets/background/happy bg.png" id="7_0xawh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40o2v"]
+size = Vector2(128, 128)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxv82"]
+bg_color = Color(0.345518, 0.683321, 0.467304, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("spawn_timer", "score_timer")]
+script = ExtResource("1_6nghc")
+spawn_timer = NodePath("Timer for Spawn")
+score_timer = NodePath("Timer for Score")
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="Darkness" type="ColorRect" parent="Overlay"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0595191, 0.0448114, 0.0909648, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(933, 1078)
+scale = Vector2(15.84, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+visible = false
+texture = ExtResource("1_j2mql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_40o2v")
+
+[node name="Apples" type="Node2D" parent="."]
+position = Vector2(0, 51)
+
+[node name="Apple" parent="Apples" instance=ExtResource("2_q0a5g")]
+position = Vector2(1514, 931)
+
+[node name="Apple2" parent="Apples" instance=ExtResource("2_q0a5g")]
+position = Vector2(553, 940)
+
+[node name="Apple3" parent="Apples" instance=ExtResource("2_q0a5g")]
+position = Vector2(1095, 925)
+
+[node name="Apple4" parent="Apples" instance=ExtResource("2_q0a5g")]
+position = Vector2(1095, 925)
+
+[node name="Apple5" parent="Apples" instance=ExtResource("2_q0a5g")]
+position = Vector2(1282, 928)
+
+[node name="Apple6" parent="Apples" instance=ExtResource("2_q0a5g")]
+position = Vector2(913, 925)
+
+[node name="Player" parent="." instance=ExtResource("3_y1emk")]
+position = Vector2(235, 864)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Score Panel" type="Panel" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 48.0
+offset_right = 160.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jxv82")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score Label" type="Label" parent="HUD/Score Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -34.5
+offset_right = 94.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Score: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 181.0
+offset_right = 250.0
+offset_bottom = 281.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="HUD" instance=ExtResource("5_46j3l")]
+visible = false
+
+[node name="Background" type="Control" parent="HUD"]
+z_index = -5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sad" type="TextureRect" parent="HUD/Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_khup8")
+
+[node name="Happy" type="TextureRect" parent="HUD/Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_0xawh")
+
+[node name="Timer for Spawn" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Timer for Score" type="Timer" parent="."]
+wait_time = 0.5

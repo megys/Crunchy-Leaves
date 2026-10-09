@@ -1,0 +1,193 @@
+[gd_scene load_steps=32 format=3 uid="uid://cjiitgokkamn8"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_rb3ru"]
+[ext_resource type="Texture2D" uid="uid://yn6nftu7081x" path="res://art assets/ui/menu/Menu Bottom.png" id="2_h1mub"]
+[ext_resource type="FontFile" uid="uid://423abkj0jg85" path="res://art assets/ui/fonts/Malverya Personal Use.otf" id="2_oaiwh"]
+[ext_resource type="FontFile" uid="uid://c0cg00f6ntb03" path="res://art assets/ui/fonts/JMH Typewriter dry-Bold.otf" id="3_dtifh"]
+[ext_resource type="Texture2D" uid="uid://lf6jb6tuntgm" path="res://art assets/ui/menu/Menu Top.png" id="3_xdwlp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c721m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8d5k2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxmre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ijgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ddxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ty70r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gh202"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkirt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_com4x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3abeh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hsxf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28ghw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pckl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ao68"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4qcr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kt63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odti6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo0jf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1oyty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s4t4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i8ta"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0t4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icplv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6tvh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvkiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fw4yx"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rb3ru")
+
+[node name="File" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 469.0
+offset_top = 50.0
+offset_right = 469.0
+offset_bottom = 50.0
+
+[node name="Bottom" type="TextureRect" parent="File"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 11.0
+offset_right = 977.0
+offset_bottom = 990.0
+texture = ExtResource("2_h1mub")
+
+[node name="Top" type="TextureRect" parent="File"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 41.0
+offset_right = 941.0
+offset_bottom = 955.0
+texture = ExtResource("3_xdwlp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.5
+offset_top = -267.5
+offset_right = 288.5
+offset_bottom = 267.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("2_oaiwh")
+theme_override_font_sizes/font_size = 150
+text = "In Memorium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Play" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("3_dtifh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c721m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8d5k2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rxmre")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3ijgx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ddxv")
+text = "play"
+
+[node name="Settings" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("3_dtifh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ty70r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gh202")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xkirt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3abeh")
+text = "settings"
+
+[node name="Controls" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("3_dtifh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8hsxf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_28ghw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pckl0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0ao68")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d4qcr")
+text = "controls"
+
+[node name="Credits" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("3_dtifh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2kt63")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_odti6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bo0jf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1oyty")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1s4t4")
+text = "credits"
+
+[node name="Free Play" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("3_dtifh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2i8ta")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m0t4s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_icplv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t6tvh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xvkiu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fw4yx")
+disabled = true
+text = "free play"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Free Play" to="." method="_on_free_play_pressed"]
