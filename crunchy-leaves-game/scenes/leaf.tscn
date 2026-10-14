@@ -1,0 +1,195 @@
+[gd_scene load_steps=9 format=3 uid="uid://bigytbg3xcfig"]
+
+[ext_resource type="Script" path="res://scripts/apple.gd" id="1_ww3p4"]
+[ext_resource type="Texture2D" uid="uid://sll5e5214u7w" path="res://art assets/leaves/leaves.png" id="2_8ch3t"]
+[ext_resource type="AudioStream" uid="uid://cpabm0uvkvn4p" path="res://art assets/placeholder/sounds/collect_apple.wav" id="4_s8xlk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7ta7"]
+radius = 6.69992
+
+[sub_resource type="Animation" id="Animation_8fkbu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaves:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaves:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -200)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaves:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yg38x"]
+resource_name = "crunch"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaves:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gmnu4"]
+resource_name = "spawn"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaves:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667, 4.76667, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, -250), Vector2(-20, -200), Vector2(20, -100), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaves:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqdev"]
+_data = {
+"RESET": SubResource("Animation_8fkbu"),
+"crunch": SubResource("Animation_yg38x"),
+"spawn": SubResource("Animation_gmnu4")
+}
+
+[node name="Leaf" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_ww3p4")
+
+[node name="Leaves" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Leaf0" type="Sprite2D" parent="Leaves"]
+position = Vector2(-0.333333, -0.666667)
+scale = Vector2(0.0292084, 0.0292085)
+texture = ExtResource("2_8ch3t")
+region_enabled = true
+region_rect = Rect2(175.558, 101.977, 473.937, 573.678)
+
+[node name="Leaf1" type="Sprite2D" parent="Leaves"]
+visible = false
+position = Vector2(0.427437, -1.34482)
+scale = Vector2(0.0262725, 0.0262725)
+texture = ExtResource("2_8ch3t")
+region_enabled = true
+region_rect = Rect2(1482, 145.983, 565.659, 483.116)
+
+[node name="Leaf2" type="Sprite2D" parent="Leaves"]
+visible = false
+position = Vector2(-0.404541, -0.628443)
+scale = Vector2(0.0269446, 0.0269446)
+texture = ExtResource("2_8ch3t")
+region_enabled = true
+region_rect = Rect2(1618.38, 667.05, 471.534, 605.922)
+
+[node name="Leaf3" type="Sprite2D" parent="Leaves"]
+visible = false
+position = Vector2(-0.34307, -0.686139)
+scale = Vector2(0.029, 0.029)
+texture = ExtResource("2_8ch3t")
+region_enabled = true
+region_rect = Rect2(110.334, 694.647, 492.827, 497.682)
+
+[node name="Leaf4" type="Sprite2D" parent="Leaves"]
+visible = false
+position = Vector2(-0.333334, -0.697544)
+scale = Vector2(0.0259587, 0.0259587)
+texture = ExtResource("2_8ch3t")
+region_enabled = true
+region_rect = Rect2(617.727, 684.937, 565.659, 611.785)
+
+[node name="Leaf5" type="Sprite2D" parent="Leaves"]
+visible = false
+position = Vector2(-0.0741667, -0.327543)
+scale = Vector2(0.0301028, 0.0301028)
+texture = ExtResource("2_8ch3t")
+region_enabled = true
+region_rect = Rect2(1171.25, 706.786, 470.978, 594.791)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.33333)
+shape = SubResource("CircleShape2D_d7ta7")
+
+[node name="CollectedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s8xlk")
+pitch_scale = 1.5
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jqdev")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://dgpottfwbpkm8"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_hd7va"]
+[ext_resource type="PackedScene" uid="uid://bjj71n7ewsj4o" path="res://scenes/transition.tscn" id="2_sm8xv"]
+[ext_resource type="Texture2D" uid="uid://8pseep7mx361" path="res://art assets/background/sad bg.png" id="3_c231d"]
+[ext_resource type="FontFile" uid="uid://c0cg00f6ntb03" path="res://art assets/ui/fonts/JMH Typewriter dry-Bold.otf" id="4_pfgxf"]
+[ext_resource type="FontFile" uid="uid://423abkj0jg85" path="res://art assets/ui/fonts/Malverya Personal Use.otf" id="5_n0dvm"]
+[ext_resource type="AudioStream" uid="uid://2oox5ttkqaqw" path="res://audio/sad2_cimbalom.wav" id="6_skj2n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wjrjc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0npr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf8l6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fc6p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1wvl"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hd7va")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Transition" parent="CanvasLayer" instance=ExtResource("2_sm8xv")]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_c231d")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.133333, 0.219608, 0.619608)
+
+[node name="Text" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -130.0
+offset_right = 573.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.980392, 0.901961, 0.690196, 1)
+theme_override_fonts/font = ExtResource("4_pfgxf")
+theme_override_font_sizes/font_size = 40
+text = "you got too sad :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game Over" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.5
+offset_top = -174.5
+offset_right = 311.5
+offset_bottom = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.701961, 0.788235, 0.623529, 1)
+theme_override_fonts/font = ExtResource("5_n0dvm")
+theme_override_font_sizes/font_size = 250
+text = "game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play again" type="Button" parent="CanvasLayer"]
+offset_left = 847.0
+offset_top = 789.0
+offset_right = 1074.0
+offset_bottom = 830.0
+theme_override_colors/font_hover_color = Color(0.994639, 0.96608, 0.892367, 1)
+theme_override_colors/font_pressed_color = Color(0.81427, 0.662166, 0.21718, 1)
+theme_override_colors/font_focus_color = Color(0.996078, 0.964706, 0.894118, 1)
+theme_override_colors/font_color = Color(0.984314, 0.901961, 0.690196, 1)
+theme_override_fonts/font = ExtResource("4_pfgxf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wjrjc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j0npr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yf8l6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6fc6p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v1wvl")
+text = "play again"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_skj2n")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Play again" to="." method="_on_play_again_pressed"]

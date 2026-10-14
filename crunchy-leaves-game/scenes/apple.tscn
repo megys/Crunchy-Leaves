@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c1gxlr0jxqecf"]
+[gd_scene load_steps=36 format=3 uid="uid://c1gxlr0jxqecf"]
 
 [ext_resource type="Script" path="res://scripts/apple.gd" id="1_7p416"]
 [ext_resource type="Texture2D" uid="uid://c3ramn8810vk7" path="res://art assets/placeholder/images/Collectibles/Collected.png" id="1_dypy0"]
@@ -97,6 +97,30 @@ region = Rect2(480, 0, 32, 32)
 atlas = ExtResource("1_p702u")
 region = Rect2(512, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0gey"]
+atlas = ExtResource("1_dypy0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfeh6"]
+atlas = ExtResource("1_dypy0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oob8c"]
+atlas = ExtResource("1_dypy0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehbup"]
+atlas = ExtResource("1_dypy0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipkfq"]
+atlas = ExtResource("1_dypy0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmmwu"]
+atlas = ExtResource("1_dypy0")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2j5ja"]
 animations = [{
 "frames": [{
@@ -177,6 +201,29 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0gey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfeh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oob8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehbup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipkfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmmwu")
+}],
+"loop": true,
+"name": &"spawned",
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d7ta7"]
@@ -189,6 +236,7 @@ script = ExtResource("1_7p416")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2j5ja")
+animation = &"collected"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

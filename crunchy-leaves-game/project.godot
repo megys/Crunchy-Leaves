@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Crunchy Leaves Game"
+config/name="In Memorium"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://art assets/leaves/leaf icon.png"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
 
 [display]
 

@@ -1,4 +1,834 @@
-[gd_scene format=3 uid="uid://uf2brv8fm2ym"]
+[gd_scene load_steps=51 format=3 uid="uid://b1a2mw8ldes8v"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_iopby"]
+[ext_resource type="PackedScene" uid="uid://bjj71n7ewsj4o" path="res://scenes/transition.tscn" id="2_0j8tb"]
+[ext_resource type="Texture2D" uid="uid://bvude8lxkgt3c" path="res://art assets/ui/menu/Decorated Card.png" id="3_434qy"]
+[ext_resource type="FontFile" uid="uid://423abkj0jg85" path="res://art assets/ui/fonts/Malverya Personal Use.otf" id="4_mlr50"]
+[ext_resource type="Texture2D" uid="uid://pvtdkx2qyt0x" path="res://art assets/ui/menu/Grandma Drawing.png" id="5_2tv54"]
+[ext_resource type="Texture2D" uid="uid://bjnxgmd5htmys" path="res://art assets/ui/menu/Drawing decor.png" id="6_145lb"]
+[ext_resource type="FontFile" uid="uid://c0cg00f6ntb03" path="res://art assets/ui/fonts/JMH Typewriter dry-Bold.otf" id="7_2rjao"]
+[ext_resource type="Texture2D" uid="uid://yn6nftu7081x" path="res://art assets/ui/menu/Menu Bottom.png" id="8_3cpub"]
+[ext_resource type="Texture2D" uid="uid://bkg62pgmtmg3u" path="res://art assets/ui/menu/Back.png" id="9_jawqq"]
+[ext_resource type="Texture2D" uid="uid://cmwws52gvj1sq" path="res://art assets/ui/slider/ball.png" id="10_3otch"]
+[ext_resource type="Texture2D" uid="uid://cm1bvah0we4bw" path="res://art assets/ui/slider/line.png" id="11_82sak"]
+[ext_resource type="Texture2D" uid="uid://ulgv0dktokbt" path="res://art assets/ui/menu/Space.png" id="12_maf1n"]
+[ext_resource type="Texture2D" uid="uid://c15dh8x8g8mkb" path="res://art assets/ui/menu/Wasd.png" id="13_wpyjy"]
+[ext_resource type="Texture2D" uid="uid://u4ox7tyy57kv" path="res://art assets/ui/menu/Arrows.png" id="14_0tas0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c721m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8d5k2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxmre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ijgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ddxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ty70r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gh202"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkirt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_com4x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3abeh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8hsxf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28ghw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pckl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ao68"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4qcr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kt63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odti6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo0jf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1oyty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s4t4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2i8ta"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0t4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icplv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6tvh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvkiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fw4yx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_txtwd"]
+texture = ExtResource("11_82sak")
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i326n"]
+texture = ExtResource("11_82sak")
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1jns"]
+texture = ExtResource("11_82sak")
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="Animation" id="Animation_d4lmi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("File/Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("File/Card:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("File/Card/Title Card:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Settings:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(740, 147)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Back:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Back:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 169)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Back:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Controls:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Controls:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(708, 151)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Controls:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Credits:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(648, 150)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Credits:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Credits:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mx273"]
+resource_name = "flip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("File/Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("File/Card:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27, 41), Vector2(943, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("File/Card/Title Card:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_ov64s"]
+resource_name = "flip_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("File/Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("File/Card:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(943, 41), Vector2(27, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("File/Card/Title Card:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(740, 147), Vector2(1162, 147)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Back:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 169), Vector2(1334, 169)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Back:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Back:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(-1.5, 1.5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Controls:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Controls:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(708, 151), Vector2(1200, 151)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Controls:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Credits:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Credits:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(648, 150), Vector2(1259, 150)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Credits:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eky74"]
+resource_name = "flip_to_controls"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("File/Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("File/Card:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27, 41), Vector2(943, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("File/Card/Title Card:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Back:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1334, 169), Vector2(576, 169)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Back:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Back:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.5, 1.5), Vector2(1.5, 1.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Controls:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Controls:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1200, 151), Vector2(708, 151)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Controls:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tm633"]
+resource_name = "flip_to_credits"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("File/Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("File/Card:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27, 41), Vector2(943, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("File/Card/Title Card:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Back:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1334, 169), Vector2(576, 169)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Back:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Back:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.5, 1.5), Vector2(1.5, 1.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Credits:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Credits:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1259, 150), Vector2(648, 150)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Credits:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n0sk7"]
+resource_name = "flip_to_settings"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("File/Card:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("File/Card:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(27, 41), Vector2(943, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("File/Card/Title Card:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1162, 147), Vector2(740, 147)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Back:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1334, 169), Vector2(576, 169)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Back:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Back:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.5, 1.5), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8cb12"]
+_data = {
+"RESET": SubResource("Animation_d4lmi"),
+"flip": SubResource("Animation_mx273"),
+"flip_back": SubResource("Animation_ov64s"),
+"flip_to_controls": SubResource("Animation_eky74"),
+"flip_to_credits": SubResource("Animation_tm633"),
+"flip_to_settings": SubResource("Animation_n0sk7")
+}
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -7,37 +837,496 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iopby")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Transition" parent="." instance=ExtResource("2_0j8tb")]
+visible = false
+layout_mode = 1
+
+[node name="File" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 469.0
+offset_top = 50.0
+offset_right = 469.0
+offset_bottom = 50.0
+
+[node name="Card" type="TextureRect" parent="File"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 41.0
+offset_right = 941.0
+offset_bottom = 955.0
+texture = ExtResource("3_434qy")
+
+[node name="Title Card" type="VBoxContainer" parent="File/Card"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -85.5
-offset_right = 76.0
-offset_bottom = 85.5
+offset_left = -300.0
+offset_top = -371.0
+offset_right = 315.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="Title" type="Label" parent="File/Card/Title Card"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("4_mlr50")
+theme_override_font_sizes/font_size = 150
+text = "In Memorium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="File/Card/Title Card"]
+layout_mode = 2
+
+[node name="Grandma" type="TextureRect" parent="File/Card/Title Card/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -138.0
+offset_right = 144.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_2tv54")
+
+[node name="Decor" type="TextureRect" parent="File/Card/Title Card/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.5
+offset_top = -64.0
+offset_right = 204.5
+offset_bottom = 141.0
+grow_horizontal = 2
+texture = ExtResource("6_145lb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="File/Card/Title Card"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Resume" type="Button" parent="File/Card/Title Card/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.580352, 0.67941, 0.592179, 1)
+theme_override_colors/font_pressed_color = Color(0.322468, 0.402737, 0.332675, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c721m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8d5k2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rxmre")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3ijgx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ddxv")
+text = "resume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="File/Card/Title Card/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Settings" type="Button" parent="File/Card/Title Card/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_pressed_color = Color(0.321569, 0.403922, 0.333333, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ty70r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gh202")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xkirt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3abeh")
+text = "settings"
+
+[node name="Dot" type="Label" parent="File/Card/Title Card/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_font_sizes/font_size = 40
+text = " • "
+
+[node name="Controls" type="Button" parent="File/Card/Title Card/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_pressed_color = Color(0.321569, 0.403922, 0.333333, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8hsxf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_28ghw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pckl0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0ao68")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d4qcr")
+text = "controls"
+
+[node name="Dot2" type="Label" parent="File/Card/Title Card/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_font_sizes/font_size = 40
+text = " • "
+
+[node name="Credits" type="Button" parent="File/Card/Title Card/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_pressed_color = Color(0.321569, 0.403922, 0.333333, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2kt63")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_odti6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bo0jf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1oyty")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1s4t4")
+text = "credits"
+
+[node name="quit" type="Button" parent="File/Card/Title Card/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.743482, 0.743482, 0.743482, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_pressed_color = Color(0.321569, 0.403922, 0.333333, 1)
+theme_override_colors/font_focus_color = Color(0.580392, 0.678431, 0.592157, 1)
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2i8ta")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m0t4s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_icplv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t6tvh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xvkiu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fw4yx")
+text = "quit"
+
+[node name="Reference" type="TextureRect" parent="File"]
+visible = false
+layout_mode = 0
+offset_left = 27.0
+offset_top = 43.0
+offset_right = 941.0
+offset_bottom = 957.0
+texture = ExtResource("3_434qy")
+flip_h = true
+
+[node name="Bottom" type="TextureRect" parent="File"]
+visible = false
+layout_mode = 0
+offset_left = -71.0
+offset_top = -45.0
+offset_right = 1035.0
+offset_bottom = 1046.0
+texture = ExtResource("8_3cpub")
+
+[node name="Back" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 576.0
+offset_top = 169.0
+offset_right = 625.0
+offset_bottom = 209.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("9_jawqq")
+stretch_mode = 3
+
+[node name="Settings" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -393.0
+offset_right = 220.0
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Resume" type="Button" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="Settings"]
 layout_mode = 2
-text = "resume"
-
-[node name="Settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("4_mlr50")
+theme_override_font_sizes/font_size = 185
 text = "settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Controls" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
 layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Master" type="VBoxContainer" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/Master"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "master volume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master Slider" type="HSlider" parent="Settings/VBoxContainer/Master"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("10_3otch")
+theme_override_icons/grabber_highlight = ExtResource("10_3otch")
+theme_override_styles/slider = SubResource("StyleBoxTexture_txtwd")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Music" type="VBoxContainer" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/Music"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "music volume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Slider" type="HSlider" parent="Settings/VBoxContainer/Music"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("10_3otch")
+theme_override_icons/grabber_highlight = ExtResource("10_3otch")
+theme_override_styles/slider = SubResource("StyleBoxTexture_i326n")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFX" type="VBoxContainer" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/VBoxContainer/SFX"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "sfx volume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX Slider" type="HSlider" parent="Settings/VBoxContainer/SFX"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("10_3otch")
+theme_override_icons/grabber_highlight = ExtResource("10_3otch")
+theme_override_styles/slider = SubResource("StyleBoxTexture_c1jns")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Controls" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -389.0
+offset_right = 252.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Controls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("4_mlr50")
+theme_override_font_sizes/font_size = 185
 text = "controls"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls"]
 layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="jump component" type="VBoxContainer" parent="Controls/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="jump" type="Label" parent="Controls/VBoxContainer/jump component"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "to jump
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="space" type="TextureRect" parent="Controls/VBoxContainer/jump component"]
+layout_mode = 2
+texture = ExtResource("12_maf1n")
+stretch_mode = 3
+
+[node name="move component" type="VBoxContainer" parent="Controls/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="move" type="Label" parent="Controls/VBoxContainer/move component"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "to move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/VBoxContainer/move component"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="wasd" type="TextureRect" parent="Controls/VBoxContainer/move component/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("13_wpyjy")
+stretch_mode = 3
+
+[node name="arrows" type="TextureRect" parent="Controls/VBoxContainer/move component/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("14_0tas0")
+stretch_mode = 3
+
+[node name="Credits" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -390.0
+offset_right = 312.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("4_mlr50")
+theme_override_font_sizes/font_size = 185
 text = "credits"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 layout_mode = 2
-text = "quit to main menu"
+theme_override_constants/separation = 50
+
+[node name="Picnic Season6" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "picnic season studio productions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="meg" type="VBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+
+[node name="dev lead" type="Label" parent="Credits/VBoxContainer/meg"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "dev lead"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mysmee" type="Label" parent="Credits/VBoxContainer/meg"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "mysmee"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="momo" type="VBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+
+[node name="art lead" type="Label" parent="Credits/VBoxContainer/momo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "art lead"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="monicasivart" type="Label" parent="Credits/VBoxContainer/momo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "monicasivart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jackson" type="VBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+
+[node name="music" type="Label" parent="Credits/VBoxContainer/jackson"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.423529, 0.517647, 0.435294, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jackson Forte" type="Label" parent="Credits/VBoxContainer/jackson"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.27451, 0.219608, 1)
+theme_override_fonts/font = ExtResource("7_2rjao")
+theme_override_font_sizes/font_size = 35
+text = "Jackson Forte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8cb12")
+}
+
+[connection signal="pressed" from="File/Card/Title Card/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="File/Card/Title Card/VBoxContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="File/Card/Title Card/VBoxContainer/HBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="File/Card/Title Card/VBoxContainer/HBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="File/Card/Title Card/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/Master/Master Slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/Music/Music Slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/SFX/SFX Slider" to="." method="_on_sfx_slider_value_changed"]
