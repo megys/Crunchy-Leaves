@@ -2,16 +2,28 @@ extends Control
 
 @onready var transition = $Transition
 @onready var animation_player = $AnimationPlayer
+@onready var page_turn = $"AnimationPlayer/Page Turn"
+
 
 # audio
 var master_bus_index = AudioServer.get_bus_index("Master")
 var music_bus_index = AudioServer.get_bus_index("Music")
 var sfx_bus_index = AudioServer.get_bus_index("SFX")
 
+# audio slider
+@onready var master_slider = $"Settings/VBoxContainer/Master/Master Slider"
+@onready var music_slider = $"Settings/VBoxContainer/Music/Music Slider"
+@onready var sfx_slider = $"Settings/VBoxContainer/SFX/SFX Slider"
+
 signal resume
 signal quit
 signal flip_card
 signal flip_back
+
+func _ready():
+	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus_index))
+	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_bus_index))
+	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_bus_index))
 
 func _on_resume_pressed():
 	resume.emit()
@@ -19,7 +31,6 @@ func _on_resume_pressed():
 func _on_settings_pressed():
 	animation_player.play("flip_to_settings")
 	flip_card.emit()
-
 
 func _on_controls_pressed():
 	animation_player.play("flip_to_controls")
@@ -51,3 +62,6 @@ func _on_music_slider_value_changed(value):
 
 func _on_sfx_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(sfx_bus_index, linear_to_db(value))
+
+func play_page_turn():
+	page_turn.play()

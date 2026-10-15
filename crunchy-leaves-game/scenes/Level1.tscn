@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bwp3le02rkf1e"]
+[gd_scene load_steps=36 format=3 uid="uid://bwp3le02rkf1e"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_6nghc"]
 [ext_resource type="Texture2D" uid="uid://c66f0yl7jrxub" path="res://icon.svg" id="1_j2mql"]
@@ -14,16 +14,23 @@
 [ext_resource type="FontFile" uid="uid://423abkj0jg85" path="res://art assets/ui/fonts/Malverya Personal Use.otf" id="7_wpjoo"]
 [ext_resource type="Texture2D" uid="uid://8subdbc0075h" path="res://art assets/ui/progress bar/Happy.png" id="8_66edq"]
 [ext_resource type="Script" path="res://scripts/eulogy.gd" id="8_i85r8"]
-[ext_resource type="Texture2D" uid="uid://by80rw7gsvowv" path="res://art assets/ui/progress bar/Rectangle 8.png" id="9_2303s"]
-[ext_resource type="Texture2D" uid="uid://cowhnc50s2gb4" path="res://art assets/ui/progress bar/Rectangle 7.png" id="10_g8ogx"]
+[ext_resource type="Texture2D" uid="uid://bcikj2u402adq" path="res://art assets/ui/progress bar/Empty.png" id="10_wv0fc"]
 [ext_resource type="Texture2D" uid="uid://b41txw0j5l0em" path="res://art assets/ui/progress bar/Sad.png" id="11_n1rru"]
+[ext_resource type="Texture2D" uid="uid://c0012m5dl7w5e" path="res://art assets/ui/progress bar/Full.png" id="11_xwa5y"]
 [ext_resource type="Texture2D" uid="uid://bfl2230ew04gx" path="res://art assets/background/sad_v2.PNG" id="16_8uldf"]
 [ext_resource type="Texture2D" uid="uid://0fr6rqa824pj" path="res://art assets/background/happy_v2.PNG" id="17_hroml"]
 [ext_resource type="AudioStream" uid="uid://di5mqwaiy5wmx" path="res://audio/happy_8bit_short.wav" id="20_praay"]
 [ext_resource type="AudioStream" uid="uid://de4s0d021yqpg" path="res://audio/sad_1_loop.wav" id="21_yrx7l"]
+[ext_resource type="AudioStream" uid="uid://7ypte0ph6t1e" path="res://audio/sfx/Windy Trees.mp3" id="22_y04sk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47t3t"]
+size = Vector2(2.99692, 1229)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dehvr"]
+size = Vector2(3.41983, 1211)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40o2v"]
-size = Vector2(128, 128)
+size = Vector2(139.442, 128)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w4ftn"]
 shader = ExtResource("6_hsvup")
@@ -128,6 +135,116 @@ tracks/6/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_ueuw2"]
+resource_name = "close_pause_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pause Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1249, 846), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vk3r6"]
+resource_name = "flip_back_pause_button"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pause Menu/Pause Menu Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2611, 19), Vector2(1847, 19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Pause Menu/Pause Menu Button:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pause Menu/Pause Menu Button:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_2x8gr"]
+resource_name = "flip_pause_button"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pause Menu/Pause Menu Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1847, 19), Vector2(2611, 19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Pause Menu/Pause Menu Button:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pause Menu/Pause Menu Button:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_1v82r"]
+resource_name = "open_pause_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pause Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1249, 846)]
+}
+
 [sub_resource type="Animation" id="Animation_d1tft"]
 resource_name = "speech_bubble_close"
 length = 0.5
@@ -222,116 +339,6 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_1v82r"]
-resource_name = "open_pause_menu"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Pause Menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-1249, 846)]
-}
-
-[sub_resource type="Animation" id="Animation_ueuw2"]
-resource_name = "close_pause_menu"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Pause Menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1249, 846), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2x8gr"]
-resource_name = "flip_pause_button"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Pause Menu/Pause Menu Button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1847, 19), Vector2(2611, 19)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Pause Menu/Pause Menu Button:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(-1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Pause Menu/Pause Menu Button:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, false]
-}
-
-[sub_resource type="Animation" id="Animation_vk3r6"]
-resource_name = "flip_back_pause_button"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Pause Menu/Pause Menu Button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2611, 19), Vector2(1847, 19)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Pause Menu/Pause Menu Button:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1, 1), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Pause Menu/Pause Menu Button:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5pley"]
 _data = {
 "RESET": SubResource("Animation_eyuim"),
@@ -349,6 +356,7 @@ spawn_timer = NodePath("Timer for Spawn")
 score_timer = NodePath("Timer for Score")
 
 [node name="Pause Menu" type="Control" parent="."]
+process_mode = 3
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
@@ -376,6 +384,7 @@ texture_hover = ExtResource("3_gffmr")
 [node name="Overlay" type="CanvasLayer" parent="."]
 
 [node name="Transition" parent="Overlay" instance=ExtResource("2_15jfp")]
+process_mode = 3
 visible = false
 z_index = 5
 mouse_filter = 2
@@ -405,6 +414,26 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0595191, 0.0448114, 0.0909648, 1)
 
+[node name="Right Wall" type="StaticBody2D" parent="."]
+position = Vector2(1625, 428)
+scale = Vector2(250.906, 1)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall"]
+position = Vector2(2.74206, 123)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_47t3t")
+
+[node name="Left Wall" type="StaticBody2D" parent="."]
+position = Vector2(1653, 421)
+scale = Vector2(250.906, 1)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall"]
+position = Vector2(-8.42548, 162)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dehvr")
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(933, 1078)
 scale = Vector2(15.84, 1)
@@ -415,6 +444,8 @@ visible = false
 texture = ExtResource("1_j2mql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(5.72096, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_40o2v")
 
 [node name="Leaves" type="TextureRect" parent="."]
@@ -470,9 +501,10 @@ texture = ExtResource("8_66edq")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+step = 0.1
 fill_mode = 3
-texture_under = ExtResource("9_2303s")
-texture_progress = ExtResource("10_g8ogx")
+texture_under = ExtResource("10_wv0fc")
+texture_progress = ExtResource("11_xwa5y")
 
 [node name="Sad" type="TextureRect" parent="Happy Bar"]
 layout_mode = 2
@@ -536,8 +568,8 @@ texture = ExtResource("16_8uldf")
 
 [node name="Happy" type="TextureRect" parent="HUD/Background"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("17_hroml")
 
 [node name="Score Panel" type="Panel" parent="HUD"]
@@ -571,25 +603,42 @@ text = "Score: 0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer for Spawn" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 
 [node name="Timer for Score" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Speech Bubble Animations" type="AnimationPlayer" parent="."]
+root_node = NodePath("../HUD")
+libraries = {
+"": SubResource("AnimationLibrary_5pley")
+}
+
+[node name="Pause Menu Animations" type="AnimationPlayer" parent="."]
+process_mode = 3
 root_node = NodePath("../HUD")
 libraries = {
 "": SubResource("AnimationLibrary_5pley")
 }
 
 [node name="Happy Song" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("20_praay")
+volume_db = -15.0
 autoplay = true
 bus = &"Music"
 
 [node name="Sad Song" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_yrx7l")
+volume_db = -15.0
 autoplay = true
 bus = &"Music"
+
+[node name="SFX Tree Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_y04sk")
+volume_db = -25.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="Pause Menu/Pause Menu Button" to="." method="_on_pause_menu_button_pressed"]

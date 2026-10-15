@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b1a2mw8ldes8v"]
+[gd_scene load_steps=53 format=3 uid="uid://b1a2mw8ldes8v"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_iopby"]
 [ext_resource type="PackedScene" uid="uid://bjj71n7ewsj4o" path="res://scenes/transition.tscn" id="2_0j8tb"]
@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://yn6nftu7081x" path="res://art assets/ui/menu/Menu Bottom.png" id="8_3cpub"]
 [ext_resource type="Texture2D" uid="uid://bkg62pgmtmg3u" path="res://art assets/ui/menu/Back.png" id="9_jawqq"]
 [ext_resource type="Texture2D" uid="uid://cmwws52gvj1sq" path="res://art assets/ui/slider/ball.png" id="10_3otch"]
+[ext_resource type="Texture2D" uid="uid://21tm5svv4shk" path="res://art assets/ui/menu/Back Pressed.png" id="10_76wco"]
 [ext_resource type="Texture2D" uid="uid://cm1bvah0we4bw" path="res://art assets/ui/slider/line.png" id="11_82sak"]
 [ext_resource type="Texture2D" uid="uid://ulgv0dktokbt" path="res://art assets/ui/menu/Space.png" id="12_maf1n"]
 [ext_resource type="Texture2D" uid="uid://c15dh8x8g8mkb" path="res://art assets/ui/menu/Wasd.png" id="13_wpyjy"]
 [ext_resource type="Texture2D" uid="uid://u4ox7tyy57kv" path="res://art assets/ui/menu/Arrows.png" id="14_0tas0"]
+[ext_resource type="AudioStream" uid="uid://dkkx56a48k1kw" path="res://audio/sfx/Paper Flip.mp3" id="16_rq2yr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c721m"]
 
@@ -303,6 +305,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false, false]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_page_turn"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ov64s"]
 resource_name = "flip_back"
@@ -486,6 +502,20 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(-1, 1)]
 }
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_page_turn"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_eky74"]
 resource_name = "flip_to_controls"
@@ -596,6 +626,20 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_page_turn"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_tm633"]
@@ -708,6 +752,20 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(-1, 1), Vector2(1, 1)]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_page_turn"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_n0sk7"]
 resource_name = "flip_to_settings"
@@ -818,6 +876,20 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1.5, 1.5), Vector2(1.5, 1.5)]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_page_turn"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8cb12"]
@@ -1037,12 +1109,14 @@ texture = ExtResource("8_3cpub")
 [node name="Back" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 576.0
+offset_left = 1334.0
 offset_top = 169.0
-offset_right = 625.0
+offset_right = 1383.0
 offset_bottom = 209.0
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("9_jawqq")
+texture_pressed = ExtResource("10_76wco")
+texture_hover = ExtResource("10_76wco")
 stretch_mode = 3
 
 [node name="Settings" type="VBoxContainer" parent="."]
@@ -1053,9 +1127,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -220.0
+offset_left = 202.0
 offset_top = -393.0
-offset_right = 220.0
+offset_right = 642.0
 offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1150,9 +1224,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -252.0
+offset_left = 240.0
 offset_top = -389.0
-offset_right = 252.0
+offset_right = 744.0
 offset_bottom = 269.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1224,9 +1298,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -312.0
+offset_left = 299.0
 offset_top = -390.0
-offset_right = 312.0
+offset_right = 923.0
 offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1320,6 +1394,10 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_8cb12")
 }
+
+[node name="Page Turn" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("16_rq2yr")
+volume_db = -15.0
 
 [connection signal="pressed" from="File/Card/Title Card/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="File/Card/Title Card/VBoxContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]

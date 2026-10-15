@@ -103,6 +103,7 @@ text = "play again"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_skj2n")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 

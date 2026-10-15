@@ -3,6 +3,8 @@ extends Control
 @onready var free_play = $"File/Card/Title Card/VBoxContainer/Free Play"
 @onready var transition = $Transition
 @onready var animation_player = $AnimationPlayer
+@onready var page_turn = $"AnimationPlayer/Page Turn"
+
 
 # audio
 var master_bus_index = AudioServer.get_bus_index("Master")
@@ -38,7 +40,8 @@ func _on_credits_pressed():
 
 func _on_free_play_pressed():
 	fade_music(0.5)
-	pass # Replace with function body.
+	await transition.fade_in_black()
+	get_tree().change_scene_to_file("res://scenes/FreePlay.tscn")
 
 
 func _on_back_pressed():
@@ -63,3 +66,6 @@ func fade_music(duration: float):
 	var tween = create_tween()
 	# Interpolate volume_db from current volume down to -80 dB (silence)
 	tween.tween_property(music, "volume_db", -80.0, duration)
+
+func play_page_turn():
+	page_turn.play()

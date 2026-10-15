@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/apple.gd" id="1_ww3p4"]
 [ext_resource type="Texture2D" uid="uid://sll5e5214u7w" path="res://art assets/leaves/leaves.png" id="2_8ch3t"]
-[ext_resource type="AudioStream" uid="uid://cpabm0uvkvn4p" path="res://art assets/placeholder/sounds/collect_apple.wav" id="4_s8xlk"]
+[ext_resource type="AudioStream" uid="uid://bx6kcwj2ma6q" path="res://audio/sfx/CRUNCH.mp3" id="3_5o17t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d7ta7"]
 radius = 6.69992
 
 [sub_resource type="Animation" id="Animation_8fkbu"]
 length = 0.001
+step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -200)]
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -182,8 +183,18 @@ region_rect = Rect2(1171.25, 706.786, 470.978, 594.791)
 position = Vector2(0, -1.33333)
 shape = SubResource("CircleShape2D_d7ta7")
 
+[node name="Little Crunch Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5o17t")
+pitch_scale = 1.5
+bus = &"SFX"
+
+[node name="Big Crunch Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5o17t")
+volume_db = 10.0
+bus = &"SFX"
+
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_s8xlk")
+stream = ExtResource("3_5o17t")
 pitch_scale = 1.5
 bus = &"SFX"
 

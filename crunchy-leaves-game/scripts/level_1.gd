@@ -1,14 +1,15 @@
 extends Node2D
 
-@onready var animation_player = $AnimationPlayer
+@onready var speech_bubble_animations = $"Speech Bubble Animations"
+@onready var pause_menu_animations = $"Pause Menu Animations"
 
-@export var spawn_timer : Timer
-@export var score_timer : Timer
+@onready var player = $Player
 var leaf = preload("res://scenes/leaf.tscn")
 #var object = preload("res://scenes/apple.tscn")
 
 # pause menu
 var pause_menu_open : bool = false
+@onready var pause_menu_control = $"Pause Menu"
 @onready var pause_menu = $"Pause Menu/PauseMenu"
 
 # speech
@@ -17,16 +18,18 @@ var pause_menu_open : bool = false
 var speaking : bool = false
 
 # score 
+@export var spawn_timer : Timer
+@export var score_timer : Timer
 var won : bool = false
 var failed : bool = false
 @onready var score_label = $"HUD/Score Panel/Score Label"
 @onready var happy_bar = $"Happy Bar/Bar"
-@onready var score: int = 10 # starting score
+@onready var score: float = 10.0 # starting score
 
 # music
 @onready var happy_song = $"Happy Song"
 @onready var sad_song = $"Sad Song"
-
+var happy_switch : bool = false
 
 # overlay 
 @onready var transition = $Overlay/Transition
@@ -52,6 +55,16 @@ func _process(_delta):
 		sad_fail() # fail from being too sad 
 	elif score >= 100 && failed == false:
 		win()
+		
+	# music changes
+	if score >= 50 && happy_switch == false:
+		happy_switch = true
+		_fade_in_music(happy_song, 2)
+		_fade_out_music(sad_song, 2)
+	elif score <50 && happy_switch == true:
+		happy_switch = false
+		_fade_in_music(sad_song, 2)
+		_fade_out_music(happy_song, 2)
 	
 # -----------------
 # STARTER FUNCTIONS
@@ -71,7 +84,7 @@ func _start_spawn() -> void:
 	spawn_timer.timeout.connect(spawn)
 	spawn_timer.start()
 
-func _setup_level() -> void:
+func _setup_level() -> void:	
 	# set backgrounds
 	happy.modulate.a = 0 # sad bg in full force
 	darkness.modulate.a = 0 # not full darkness
@@ -115,6 +128,10 @@ func spawn() -> void:
 # -----------------
 
 func crunch_leaf() -> void:
+	# don't invoke if already won
+	if won == true || failed == true:
+		pass
+	
 	# cannot crunch if no one is speaking
 	if speaking == false:
 		if won == false: # if you haven't already won
@@ -123,17 +140,30 @@ func crunch_leaf() -> void:
 	if score < 0: # Game Over countdown resets 
 		score = 0
 		clear_darkness() 
-	score += 5
+	
+	if player.velocity.y != 0: # BIG CRUNCH / jumping crunch
+		increase_score(5)
+	elif player.velocity.x != 0: # Little Crunch /walking crunch
+		increase_score(1)
+
+	
+func increase_score(value):
+	score += value
 	score_label.text = "Score: %s" % score
-	happy_bar.value += 5
+	happy_bar.value += value
 	change_bg(happy_bar.value)
 
 func update_score() -> void:
-	# You lose 1 point for every Score Timer Wait Time
-	score -= 1
+	# don't invoke if already won
+	if won == true || failed == true:
+		pass
+		
+	# You lose X point for every Score Timer Wait Time
+	var point = 0.1
+	score -= point
 	score_label.text = "Score: %s" % score
 	if score >= 0:
-		happy_bar.value -= 1
+		happy_bar.value -= point
 	else:
 		darken(score*-1) # screen starts to darken
 	change_bg(happy_bar.value)
@@ -185,15 +215,15 @@ func sad_fail() -> void:
 # -----------------
 
 func _start_speaking():	
-	animation_player.play("speech_bubble_open")
+	speech_bubble_animations.play("speech_bubble_open")
 	# Wait until it finishes
-	await animation_player.animation_finished
+	await speech_bubble_animations.animation_finished
 	speaking = true # now you can crunch
 	
 func _stop_speaking():
-	animation_player.play("speech_bubble_close")
+	speech_bubble_animations.play("speech_bubble_close")
 	# Wait until it finishes
-	await animation_player.animation_finished
+	await speech_bubble_animations.animation_finished
 	speaking = false # now you CANNOT crunch
 	
 	# wait 2-8 seconds for the moment of silence to pass
@@ -208,6 +238,7 @@ func _stop_speaking():
 func _initialize_music():
 	# happy song starts as silent
 	happy_song.volume_db = -80.0
+	sad_song.volume_db = -15
 
 func _music_get_happy():
 	_fade_in_music(happy_song, 1)
@@ -225,7 +256,7 @@ func _fade_out_music(song, duration: float):
 func _fade_in_music(song, duration: float):
 	var tween = create_tween()
 	# Interpolate volume_db from current volume up to 0 dB (normal)
-	tween.tween_property(song, "volume_db", -80.0, duration)
+	tween.tween_property(song, "volume_db", -15.0, duration)
 	
 func _fade_all_music(duration: float):
 	_fade_out_music(happy_song, duration)
@@ -242,27 +273,33 @@ func _on_pause_menu_button_pressed():
 		pause_game()
 
 func resume_game():
-	animation_player.play("close_pause_menu")
+	get_viewport().gui_release_focus()
+	pause_menu_animations.play("close_pause_menu")
 	pause_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	pause_menu_open = false
-	await animation_player.animation_finished
+	await pause_menu_animations.animation_finished
+	
 	# unpause game
+	get_tree().paused = false 
 	
 func pause_game():
+	# pause game
 	get_tree().paused = true
-	animation_player.play("open_pause_menu")
-	await animation_player.animation_finished
+	pause_menu_animations.play("open_pause_menu")
+	await pause_menu_animations.animation_finished
 	pause_menu.mouse_filter = Control.MOUSE_FILTER_STOP
 	pause_menu_open = true
 	
 func quit_game():
 	# exit to main menu
+	get_viewport().gui_release_focus()
 	_fade_all_music(0.5)
 	await transition.fade_in_black()
+	get_tree().paused = false 
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 	
 func flip_card():
-	animation_player.play("flip_pause_button")
+	pause_menu_animations.play("flip_pause_button")
 	
 func flip_back():
-	animation_player.play("flip_back_pause_button")
+	pause_menu_animations.play("flip_back_pause_button")

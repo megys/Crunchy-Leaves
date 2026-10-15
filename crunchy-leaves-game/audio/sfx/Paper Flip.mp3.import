@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkkx56a48k1kw"
+path="res://.godot/imported/Paper Flip.mp3-4e8a6d4a2f3af066c89a5b0905aaf0ce.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/Paper Flip.mp3"
+dest_files=["res://.godot/imported/Paper Flip.mp3-4e8a6d4a2f3af066c89a5b0905aaf0ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
